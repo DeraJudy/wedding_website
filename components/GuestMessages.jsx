@@ -13,33 +13,76 @@ const GuestMessages = () => {
   };
 
   useEffect(() => {
-    const saved = localStorage.getItem("weddingMessages");
-    if (saved) setMessages(JSON.parse(saved));
+    const fetchMessages = async () => {
+      const res = await fetch("/api/messages");
+      const data = await res.json();
+      setMessages(data);
+    };
+
+    fetchMessages();
   }, []);
 
-  const handleSubmit = (e) => {
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   if (!name.trim() || !message.trim()) return;
+
+  //   const newMessage = {
+  //     id: Date.now().toString(),
+  //     name: name.trim(),
+  //     message: message.trim(),
+  //     timestamp: new Date().toLocaleDateString(),
+  //   };
+
+  //   const updated = [newMessage, ...messages];
+  //   setMessages(updated);
+  //   localStorage.setItem("weddingMessages", JSON.stringify(updated));
+
+  //   setName("");
+  //   setMessage("");
+
+  //   toast({
+  //     title: "Thank you! 💕",
+  //     description: "Your blessing has been sent!",
+  //   });
+  // };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!name.trim() || !message.trim()) return;
 
-    const newMessage = {
-      id: Date.now().toString(),
-      name: name.trim(),
-      message: message.trim(),
-      timestamp: new Date().toLocaleDateString(),
-    };
+    try {
+      const res = await fetch("/api/messages", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: name.trim(),
+          message: message.trim(),
+        }),
+      });
 
-    const updated = [newMessage, ...messages];
-    setMessages(updated);
-    localStorage.setItem("weddingMessages", JSON.stringify(updated));
+      if (!res.ok) throw new Error("Failed");
 
-    setName("");
-    setMessage("");
+      const savedMessage = await res.json();
 
-    toast({
-      title: "Thank you! 💕",
-      description: "Your blessing has been sent!",
-    });
+      setMessages((prev) => [savedMessage, ...prev]);
+      setName("");
+      setMessage("");
+
+      toast({
+        title: "Thank you! 💕",
+        description: "Your blessing has been sent!",
+      });
+    } catch (error) {
+      toast({
+        title: "Oops 😢",
+        description: "Something went wrong. Please try again.",
+      });
+    }
   };
+
 
   return (
     <section id="wishes" className="py-24" style={{ backgroundColor: "white" }}>
@@ -58,9 +101,9 @@ const GuestMessages = () => {
 
         {/* Form */}
         <div className="shadow-elegant mb-12 animate-fade-in bg-white rounded-xl"
-        style={{
+          style={{
             border: "2px solid #F3F7F2"
-        }}
+          }}
         >
           <div className="p-8">
             <form onSubmit={handleSubmit} className="space-y-4">
@@ -108,7 +151,7 @@ const GuestMessages = () => {
         {/* Messages List */}
         <div className="space-y-4 max-h-96 overflow-y-auto">
           {messages.map((msg) => (
-            <div key={msg.id} className="shadow-soft animate-fade-in bg-white rounded-md">
+            <div key={msg._id} className="shadow-soft animate-fade-in bg-white rounded-md">
               <div className="p-6 flex items-start gap-4">
 
                 <div
