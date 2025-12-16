@@ -3,9 +3,9 @@ import { Phone, Mail, MessageCircle } from 'lucide-react';
 
 const ContactSection = () => {
   return (
-    <section 
-      id="contact" 
-      className="py-24" 
+    <section
+      id="contact"
+      className="py-24"
       style={{ backgroundColor: "#F3F7F2" }} // very light sage green
     >
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -25,18 +25,18 @@ const ContactSection = () => {
         <div className="grid sm:grid-cols-2 gap-6">
 
           {/* WhatsApp */}
-          <div 
+          <div
             className="shadow-soft bg-white border rounded-2xl hover:shadow-romantic transition-all animate-fade-in"
             style={{ borderColor: "#9CAF88" }} // sage green border
           >
             <div className="p-8 text-center">
-              <MessageCircle 
-                className="h-10 w-10 mx-auto mb-4" 
+              <MessageCircle
+                className="h-10 w-10 mx-auto mb-4"
                 style={{ color: "#9CAF88" }} // sage green icon
               />
               <h4 className="text-black text-xl font-semibold mb-4">WhatsApp</h4>
 
-              <button 
+              <button
                 className="w-full text-white py-2 rounded-lg font-medium transition-all"
                 style={{ backgroundColor: "#9CAF88" }} // sage green button
                 onClick={() => window.open('https://wa.me/2348067593064', '_blank')}
@@ -47,28 +47,31 @@ const ContactSection = () => {
           </div>
 
           {/* Email */}
-          <div 
+          <div
             className="shadow-soft bg-white border rounded-2xl hover:shadow-romantic 
             transition-all animate-fade-in"
             style={{ borderColor: "#87CEEB", animationDelay: "0.2s" }} // sky blue border
           >
             <div className="p-8 text-center">
-              <Mail 
-                className="h-10 w-10 mx-auto mb-4" 
+              <Mail
+                className="h-10 w-10 mx-auto mb-4"
                 style={{ color: "#87CEEB" }} // sky blue icon
               />
               <h4 className="text-black text-xl font-semibold mb-4">Email</h4>
 
-              <button 
-                className="w-full py-2 rounded-lg font-medium transition-all bg-white"
-                style={{ 
-                  border: "2px solid #87CEEB", 
-                  color: "#000",
-                }}
-                onClick={() => window.open('mailto:hello@deragozie.com', '_self')}
+              <a
+                href="mailto:alienjudy25@pematrix.com"
+                aria-label="Send us an email"
+                className="w-full py-2 rounded-lg font-medium transition-all 
+             bg-white border-2 border-[#87CEEB] 
+             flex items-center justify-center gap-2
+             hover:bg-[#87CEEB]/10"
+                style={{ color: "#000" }}
               >
-                hello@deragozie.com
-              </button>
+                <Mail className="h-5 w-5" />
+                <span>alienjudy25@pematrix.com</span>
+              </a>
+
             </div>
           </div>
 

@@ -16,7 +16,7 @@ const Footer = () => {
           <a href="https://instagram.com/deragozie_wedding" className="text-muted-foreground hover:text-primary transition-colors">
             <Instagram className="h-5 w-5" />
           </a>
-          <a href="mailto:hello@deragozie.com" className="text-muted-foreground hover:text-primary transition-colors">
+          <a href="mailto:alienjudy25@pematrix.com" className="text-muted-foreground hover:text-primary transition-colors">
             <Mail className="h-5 w-5" />
           </a>
         </div>
