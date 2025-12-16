@@ -77,18 +77,18 @@ const HeroSection = () => {
         {/* Names */}
         <div className="text-center">
           <h1 className="text-6xl sm:text-7xl lg:text-8xl font-romantic font-bold mb-2 tracking-wide">
-            Dera
+            Chidera
           </h1>
 
           <span
             className="text-4xl sm:text-5xl mx-3"
-            style={{ color: "#D4AF37" }} // Gold colour
+            style={{ color: "#000" }} // Gold colour
           >
             &
           </span>
 
           <h1 className="text-6xl sm:text-7xl lg:text-8xl font-romantic font-bold mt-2 mb-6 tracking-wide">
-            Gozie
+            Chigoziem
           </h1>
         </div>
 
@@ -151,7 +151,7 @@ const HeroSection = () => {
         <div className="absolute top-32 left-10 animate-bounce">
           <Heart
             className="h-8 w-8"
-            style={{ color: "#9CAF88" }} // Sage Green
+            style={{ color: "#000" }} // Sage Green
           />
         </div>
 

@@ -39,7 +39,7 @@ const ContactSection = () => {
               <button 
                 className="w-full text-white py-2 rounded-lg font-medium transition-all"
                 style={{ backgroundColor: "#9CAF88" }} // sage green button
-                onClick={() => window.open('https://wa.me/2348091234567', '_blank')}
+                onClick={() => window.open('https://wa.me/2348067593064', '_blank')}
               >
                 Chat with Us
               </button>

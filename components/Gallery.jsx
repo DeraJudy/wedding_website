@@ -215,7 +215,7 @@ const Gallery = () => {
               <button className="inline-flex items-center gap-2 rounded-full 
               bg-[gold] px-8 py-3 text-gray-800 font-medium transition 
               hover:bg-[gold]/90">
-                #alienJudy
+                #alienJudy25
               </button>
 
 
