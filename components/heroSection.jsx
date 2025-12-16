@@ -70,9 +70,9 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto pt-16">
-        <p className="font-modern text-lg sm:text-xl tracking-widest uppercase mb-4 opacity-90 animate-fade-in">
+        {/* <p className="font-modern text-lg sm:text-xl tracking-widest uppercase mb-4 opacity-90 animate-fade-in">
           We are Getting Married
-        </p>
+        </p> */}
 
         {/* Names */}
         <div className="text-center">

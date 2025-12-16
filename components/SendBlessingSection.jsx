@@ -1,10 +1,12 @@
 "use client"
-import { Heart, Gift, CreditCard, Building, Coffee } from 'lucide-react';
+import { Heart, Gift, Building, Coffee } from 'lucide-react';
 
 const SendBlessingSection = () => {
   return (
     <section id="gift" className="py-24 bg-linear-to-b from-white to-[#F3F7F2]">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        {/* Header */}
         <div className="text-center mb-16 animate-fade-in">
           <Gift className="h-12 w-12 text-[gold] mx-auto mb-6" />
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-700 mb-6">
@@ -15,51 +17,120 @@ const SendBlessingSection = () => {
           </p>
         </div>
 
-        <div className="shadow-elegant mb-8 animate-fade-in bg-white rounded-2xl p-9 
-        border-gray-700" style={{ animationDelay: '0.2s' }}>
-          <div>
-            <div className="flex items-center text-gray-700 font-elegant text-xl">
-              <Building className="mr-3 h-6 w-6 text-[#9CAF88]" />
-              Bank Account Details
+        {/* Bank Account Details (Double) */}
+        {/* Bank Account Details (Double) */}
+        <div
+          className="grid md:grid-cols-2 gap-6 mb-10 animate-fade-in"
+          style={{ animationDelay: '0.2s' }}
+        >
+
+          {/* Bride's Account */}
+          <div className="bg-white rounded-2xl border border-gray-200 shadow-elegant p-8">
+            <h4 className="font-elegant text-lg font-semibold text-gray-700 mb-4">
+              Bride’s Account
+            </h4>
+
+            <div className="space-y-4">
+              <div className="bg-[#9CAF88] rounded-xl p-5">
+                <p className="font-modern text-sm text-gray-500 mb-1">
+                  Account Name
+                </p>
+                <p className="font-semibold text-white text-lg">
+                  Chidera Judith Ulu
+                </p>
+              </div>
+
+              <div className="flex justify-between items-center bg-secondary/50 rounded-xl p-4">
+                <div>
+                  <p className="font-modern text-sm text-gray-500 mb-1">
+                    Bank
+                  </p>
+                  <p className="font-semibold text-gray-700">
+                    Opay
+                  </p>
+                </div>
+
+                <div className="text-right">
+                  <p className="font-modern text-sm text-gray-500 mb-1">
+                    Account Number
+                  </p>
+                  <p className="font-semibold text-[gold] text-lg">
+                    8105521646
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
-          <div className="space-y-4 mt-3">
-            <div className="bg-[#9CAF88] rounded-xl p-6">
-              <p className="font-modern text-sm text-gray-8 00 mb-2">Account Name</p>
-              <p className="font-semibold text-gray-100 text-lg">Dera & Gozie Wedding</p>
-            </div>
-            <div className="grid sm:grid-cols-2 mt-3 gap-4">
-              <div className="bg-secondary/50 rounded-xl p-4">
-                <p className="font-modern text-sm text-muted-foreground mb-1">Bank</p>
-                <p className="font-semibold text-foreground">First Bank Nigeria</p>
+
+          {/* Groom's Account */}
+          <div className="bg-white rounded-2xl border border-gray-200 shadow-elegant p-8">
+            <h4 className="font-elegant text-lg font-semibold text-gray-700 mb-4">
+              Groom’s Account
+            </h4>
+
+            <div className="space-y-4">
+              <div className="bg-[#9CAF88] rounded-xl p-5">
+                <p className="font-modern text-sm text-gray-500 mb-1">
+                  Account Name
+                </p>
+                <p className="font-semibold text-white text-lg">
+                  Chigoziem Andrew Iheanacho
+                </p>
               </div>
-              <div className="bg-secondary/50 rounded-xl p-4">
-                <p className="font-modern text-sm text-muted-foreground mb-1">Account Number</p>
-                <p className="font-semibold text-gold text-lg">1234567890</p>
+
+              <div className="flex justify-between items-center bg-secondary/50 rounded-xl p-4">
+                <div>
+                  <p className="font-modern text-sm text-gray-500 mb-1">
+                    Bank
+                  </p>
+                  <p className="font-semibold text-gray-700">
+                   Opay
+                  </p>
+                </div>
+
+                <div className="text-right">
+                  <p className="font-modern text-sm text-gray-500 mb-1">
+                    Account Number
+                  </p>
+                  <p className="font-semibold text-[gold] text-lg">
+                    8067593064
+                  </p>
+                </div>
               </div>
             </div>
           </div>
+
         </div>
 
-        <div className="shadow-soft animate-fade-in" style={{ animationDelay: '0.4s' }}>
+
+        {/* Buy Me a Coffee */}
+        <div
+          className="animate-fade-in bg-white rounded-2xl border border-gray-200 shadow-soft"
+          style={{ animationDelay: '0.4s' }}
+        >
           <div className="p-8 text-center">
             <Coffee className="h-10 w-10 text-[gold] mx-auto mb-4" />
-            <h4 className="font-elegant text-xl font-semibold text-foreground mb-4">
+
+            <h4 className="font-elegant text-xl font-semibold text-black mb-2">
               Send a Little Love
             </h4>
-            <p className="text-muted-foreground font-modern mb-6">
+
+            <p className="text-gray-600 font-modern mb-6">
               Support us through Buy Me a Coffee
             </p>
-            <button 
-              size="lg"
-              className="bg-[gold] hover:bg-[gold]/90 text-gray-800 font-medium px-8"
-              onClick={() => window.open('https://buymeacoffee.com/deragozie', '_blank')}
+
+            <button
+              onClick={() =>
+                window.open('https://buymeacoffee.com/deragozie', '_blank')
+              }
+              className="inline-flex items-center gap-2 rounded-full bg-[gold] px-8 py-3 text-gray-800 font-medium transition hover:bg-[gold]/90"
             >
-              <Heart className="mr-2 h-5 w-5" fill="currentColor" />
+              <Heart className="h-5 w-5" fill="currentColor" />
               Buy Us a Coffee
             </button>
           </div>
         </div>
+
       </div>
     </section>
   );
