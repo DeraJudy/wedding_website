@@ -212,12 +212,12 @@ const Gallery = () => {
                 Tag your photos from the day — we'd love to see them!
               </p>
 
-              <span
-                className="px-6 py-3 rounded-full font-modern font-medium text-white"
-                style={{ backgroundColor: "#9CAF88" }}
-              >
+              <button className="inline-flex items-center gap-2 rounded-full 
+              bg-[gold] px-8 py-3 text-gray-800 font-medium transition 
+              hover:bg-[gold]/90">
                 #alienJudy
-              </span>
+              </button>
+
 
             </div>
           </div>

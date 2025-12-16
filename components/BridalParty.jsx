@@ -1,30 +1,64 @@
 import { Heart, Crown, Sparkles } from 'lucide-react';
+import adaezeImg from "@/assets/adaeze.jpg";
+import divineImg from "@/assets/divine.jpg";
+import idowuImg from "@/assets/idowu.jpg";
+import oziImg from "@/assets/ozi.jpg";
+import sciraImg from "@/assets/scira.jpg";
+import taiwoImg from "@/assets/taiwo.jpg";
+import wenduImg from "@/assets/wendu.jpg";
+import ebukaImg from '@/assets/Ebuka.jpg';
 
 const BridalParty = () => {
   const bridesmaids = [
     {
-      name: "Amara Okafor",
+      name: "Udochi Nwam",
       role: "Chief Bridesmaid",
-      description: "My sister and best friend since childhood. The one who always has my back and makes me laugh until my stomach hurts.",
+      description: "My university roommate turned lifelong friend. She's the voice of joy, peace and the life of every party.",
       image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop&crop=face"
     },
     {
-      name: "Kemi Adebayo",
+      name: "Ozi Beke",
       role: "Bridesmaid",
-      description: "My college roommate turned lifelong friend. She's the voice of reason and the life of every party.",
-      image: "https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?w=400&h=400&fit=crop&crop=face"
+      description: "My sister and best friend since childhood. The one who always check on me everytime and she is effortlessly cool.",
+      image: oziImg.src
     },
     {
-      name: "Tolu Fashola",
+      name: "Wendu Baby",
       role: "Bridesmaid",
-      description: "My work bestie who became family. She's always ready for an adventure and gives the best advice.",
-      image: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&h=400&fit=crop&crop=face"
+      description: "My sister and best friend since childhood. The one who always has my back and makes me laugh until my stomach hurts.",
+      // description: "My work bestie who became family. She's always ready for an adventure and gives the best advice.",
+      image: wenduImg.src
     },
     {
-      name: "Funmi Okoro",
+      name: "Divine",
       role: "Bridesmaid",
-      description: "My childhood friend who knows all my secrets. She's been there through every milestone.",
-      image: "https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?w=400&h=400&fit=crop&crop=face"
+      description: "My cousin and the one who introduced me to the magical world of K-dramas and cartoons. Gentle fun-loving",
+      // description: "My childhood friend who knows all my secrets. She's been there through every milestone.",
+      image: divineImg.src
+    },
+    {
+      name: "Adaeze",
+      role: "Bridesmaid",
+      description: "My cousin and one of my forever sisters — sweet, stylish, and always showing up with love and laughter.",
+      image: adaezeImg.src
+    },
+    {
+      name: "Scira",
+      role: "Bridesmaid",
+      description: "My year-one roommate turned lifelong friend — always ready with movie recommendations and good vibes ",
+      image: sciraImg.src
+    },
+    {
+      name: "Idowu",
+      role: "Bridesmaid",
+      description: "A friend I met during my service year — ambitious, curious, and always eager to learn. She is Fun.",
+      image: idowuImg.src
+    },
+    {
+      name: "Taiwo",
+      role: "Bridesmaid",
+      description: "A friend I met during a training class — her joy and excitement to be part of our wedding means so much to me.",
+      image: taiwoImg.src
     }
   ];
 
@@ -33,7 +67,8 @@ const BridalParty = () => {
       name: "Chike Okwu",
       role: "Best Man",
       description: "Gozie's brother and partner in crime. They've been through everything together – the most loyal friend.",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
+      image: ebukaImg.src
+      // image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
     },
     {
       name: "Emeka Uche",
@@ -66,7 +101,7 @@ const BridalParty = () => {
           </h2>
           <p className="text-lg text-gray-500 max-w-2xl mx-auto font-modern">
             These incredible people will be standing with us on our special day. 
-            Our chosen family who have supported our love story from the beginning.
+            Our friends and family who have supported our love story from the beginning.
           </p>
         </div>
 
