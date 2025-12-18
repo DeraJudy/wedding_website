@@ -9,7 +9,7 @@ const Footer = () => {
         <p className="text-muted-foreground font-modern mb-6">Dec 27th, 2025 • Owerri, Nigeria</p>
         
         <div className="flex justify-center gap-4 mb-6">
-          <span className="bg-[#9CAF88] text-white px-4 py-2 rounded-full text-sm">#alienJudy2025</span>
+          <span className="bg-[#9CAF88] text-white px-4 py-2 rounded-full text-sm">#alienJudy25</span>
         </div>
         
         <div className="flex justify-center gap-6 mb-8">
@@ -22,7 +22,7 @@ const Footer = () => {
         </div>
         
         <p className="text-muted-foreground text-sm font-modern">
-          © 2025 DeraGoziem Wedding. Made with <Heart className="inline h-3 w-3 text-[gold]" fill="currentColor" /> for our special day.
+          © 2025 alienjudy25 Wedding. Made with <Heart className="inline h-3 w-3 text-[gold]" fill="currentColor" /> for our special day.
         </p>
       </div>
     </footer>

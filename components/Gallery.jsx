@@ -12,6 +12,13 @@ import dateImg5 from "@/assets/date5.jpeg";
 import dateImg6 from "@/assets/date6.jpeg";
 import dateImg7 from "@/assets/date7.jpeg";
 import dateImg8 from "@/assets/date8.jpeg";
+import dateImg9 from "@/assets/date9.jpeg";
+import dateImg10 from "@/assets/date10.jpeg";
+import dateImg11 from "@/assets/date11.jpg";
+import dateImg12 from "@/assets/date12.jpg";
+import dateImg13 from "@/assets/date13.jpg";
+import dateImg14 from "@/assets/date14.jpg";
+import dateImg15 from "@/assets/date15.jpg";
 
 const categories = [
   { id: "all", label: "All Photos" },
@@ -23,22 +30,33 @@ const categories = [
 ];
 
 const galleryImages = [
-  // { src: dateImg1, alt: "Pre-wedding beach shoot", category: "prewedding" },
+  { src: dateImg12, alt: "Pre-wedding beach shoot", category: "prewedding" },
   { src: dateImg2, alt: "Traditional ceremony setup", category: "traditional" },
   { src: dateImg3, alt: "Couple laughing together", category: "fun" },
-  // { src: dateImg4, alt: "Engagement ring moment", category: "engagement" },
-  // { src: dateImg5, alt: "Dancing together at the reception", category: "fun" },
+  { src: dateImg14, alt: "Engagement ring moment", category: "engagement" },
   { src: dateImg6, alt: "Sunset couple portrait", category: "portraits" },
   {
     src: dateImg7,
     alt: "Pre-wedding dinner",
     category: "prewedding",
   },
+   { src: dateImg13, alt: "Dancing together at the reception", category: "fun" },
   {
     src: dateImg8,
     alt: "Travel adventure together",
     category: "fun",
   },
+  {
+    src: dateImg9,
+    alt: "Travel adventure together",
+    category: "fun",
+  },
+  {
+    src: dateImg10,
+    alt: "Travel adventure together",
+    category: "fun",
+  },
+   { src: dateImg15, alt: "Dancing together at the reception", category: "fun" },
   {
     src: dateImg4,
     alt: "Romantic classic portrait",
@@ -100,7 +118,7 @@ export default function Gallery() {
           <h2 className="font-elegant text-4xl sm:text-5xl lg:text-6xl font-bold text-black mb-6">
             Our Gallery
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto font-modern">
+          <p className="text-lg text-gray-600 max-w-2xl px-5 mx-auto font-modern">
             A collection of our favorite memories together – from quiet moments to joyful celebrations.
           </p>
         </div>
@@ -133,7 +151,7 @@ export default function Gallery() {
               onClick={() => openModal(index)}
               className="group cursor-pointer overflow-hidden rounded-2xl bg-white shadow-soft hover:shadow-romantic transition"
             >
-              <div className="relative aspect-[3/4]">
+              <div className="relative aspect-3/4">
                 <Image
                   src={image.src}
                   alt={image.alt}

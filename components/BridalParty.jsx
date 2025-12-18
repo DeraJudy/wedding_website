@@ -24,7 +24,7 @@ const BridalParty = () => {
       image: oziImg.src
     },
     {
-      name: "Wendu Baby",
+      name: "Nwendu Baby",
       role: "Bridesmaid",
       description: "My sister and best friend since childhood. The one who always has my back and makes me laugh until my stomach hurts.",
       // description: "My work bestie who became family. She's always ready for an adventure and gives the best advice.",
@@ -56,7 +56,7 @@ const BridalParty = () => {
       image: idowuImg.src
     },
     {
-      name: "Taiwo",
+      name: "Mercy",
       role: "Bridesmaid",
       description: "A friend I met during a training class — her joy and excitement to be part of our wedding means so much to me.",
       image: taiwoImg.src
@@ -65,9 +65,9 @@ const BridalParty = () => {
 
   const groomsmen = [
     {
-      name: "Chike Okwu",
+      name: "Matthew ",
       role: "Best Man",
-      description: "Gozie's brother and partner in crime. They've been through everything together – the most loyal friend.",
+      description: "Fondly known as Father Ebuka, Matthew is a man of faith, depth, and uncommon resilience. Brilliant, disciplined, hardworking, and focused, he is the kind of person who stands firm in hard times. You don’t need a motivational speaker when you have Matthew — he lives his gospel. With him by your side, giving up simply isn’t an option; as we like to say, you can’t have a Matthew and give up… we die here 😄. His loyalty, strength, and unwavering support make him more than a friend — he’s family.",
       image: ebukaImg.src
       // image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
     }
