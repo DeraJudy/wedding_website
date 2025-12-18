@@ -122,7 +122,7 @@ const OurStory = () => {
         <div className="mb-16">
           <div className="flex items-center justify-center gap-2 mb-8">
             <Camera className="h-5 w-5 text-[gold]" />
-            <h3 className="text-2xl font-semibold">Our Memories</h3>
+            <h3 className="text-2xl font-semibold text-gray-600">Our Memories</h3>
           </div>
 
           <div className="flex overflow-x-auto gap-4 pb-4 snap-x snap-mandatory">
