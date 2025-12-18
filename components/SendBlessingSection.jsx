@@ -128,7 +128,8 @@ const SendBlessingSection = () => {
     {/* Button */}
     <button
       onClick={() =>
-        window.open('https://paystack.shop/pay/gs883ek7jy', '_blank')
+        // window.open('https://paystack.shop/pay/gs883ek7jy', '_blank')
+         window.open('https://paystack.shop/pay/wnqzq-7y-u', '_blank')
       }
       className="inline-flex items-center gap-2 rounded-full bg-[gold] px-8 py-3 text-gray-800 font-medium transition hover:bg-[gold]/90 hover:scale-[1.02]"
     >
