@@ -101,7 +101,7 @@ const BridalParty = () => {
             Bridal Party
           </h2>
           <p className="text-lg text-gray-500 max-w-2xl mx-auto font-modern">
-            These incredible people will be standing with us on our special day. 
+            These incredible people will be standing with us on our special day.
             Our friends and family who have supported our love story from the beginning.
           </p>
         </div>
@@ -119,8 +119,8 @@ const BridalParty = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 px-6">
             {bridesmaids.map((person, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="shadow-soft hover:shadow-romantic transition-all duration-300 hover:-translate-y-2 bg-card/80 backdrop-blur-sm border-primary/10 animate-fade-in"
                 style={{ animationDelay: `${0.3 + index * 0.1}s` }}
               >
@@ -134,10 +134,10 @@ const BridalParty = () => {
                       />
                     </div>
                     {person.role === "Chief Bridesmaid" && (
-  <div className="absolute -top-2 -right-2 bg-[#9CAF88] text-white p-2 rounded-full shadow-md">
-    <Sparkles className="h-4 w-4" />
-  </div>
-)}
+                      <div className="absolute -top-2 -right-2 bg-[#9CAF88] text-white p-2 rounded-full shadow-md">
+                        <Sparkles className="h-4 w-4" />
+                      </div>
+                    )}
 
                   </div>
                   <h4 className="font-elegant text-xl font-semibold text-black mb-2">
@@ -168,9 +168,11 @@ const BridalParty = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 px-6">
             {groomsmen.map((person, index) => (
-              <div 
-                key={index} 
-                className="shadow-soft hover:shadow-romantic transition-all duration-300 hover:-translate-y-2 bg-card/80 backdrop-blur-sm border-accent/10 animate-fade-in"
+              <div
+                key={index}
+                className="grid gap-8 px-6 justify-center place-items-center
+                  [grid-template-columns:repeat(auto-fit,minmax(250px,1fr))]
+                  max-w-6xl mx-auto"
                 style={{ animationDelay: `${0.8 + index * 0.1}s` }}
               >
                 <div className="p-6 text-center bg-white rounded-2xl">
@@ -183,10 +185,10 @@ const BridalParty = () => {
                       />
                     </div>
                     {person.role === "Best Man" && (
-  <div className="absolute -top-2 -right-2 bg-[#D4AF37] text-white p-2 rounded-full shadow-md">
-    <Sparkles className="h-4 w-4" />
-  </div>
-)}
+                      <div className="absolute -top-2 -right-2 bg-[#D4AF37] text-white p-2 rounded-full shadow-md">
+                        <Sparkles className="h-4 w-4" />
+                      </div>
+                    )}
 
 
                   </div>
@@ -214,8 +216,8 @@ const BridalParty = () => {
                 Thank You to Our Wedding Party
               </h4>
               <p className="text-muted-foreground font-modern leading-relaxed">
-                We are so grateful to have such incredible people in our lives. Thank you for being 
-                part of our journey, for your love, support, and for agreeing to stand with us as 
+                We are so grateful to have such incredible people in our lives. Thank you for being
+                part of our journey, for your love, support, and for agreeing to stand with us as
                 we begin this new chapter. We couldn't imagine our special day without each of you!
               </p>
             </div>
