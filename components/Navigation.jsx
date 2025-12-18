@@ -17,7 +17,7 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="fixed top-0 w-full bg-white backdrop-blur-md z-50 border-b border-primary/10 shadow-soft">
+    <nav className="fixed top-0 w-full bg-transparent backdrop-blur-md z-50 shadow-soft">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
 
@@ -60,7 +60,7 @@ const Navigation = () => {
       {/* Mobile Navigation */}
       {isOpen && (
         <div className="lg:hidden animate-fade-in">
-          <div className="px-4 pt-2 pb-4 space-y-1 bg-background border-b border-primary/10">
+          <div className="px-4 pt-2 pb-4 space-y-1 bg-white/90 backdrop-blur-md">
             {navItems.map((item) => (
               <a
                 key={item.label}

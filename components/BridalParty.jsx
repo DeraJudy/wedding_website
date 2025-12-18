@@ -209,10 +209,10 @@ const BridalParty = () => {
 
         {/* Thank You Message */}
         <div className="mt-20 text-center animate-fade-in" style={{ animationDelay: '1.2s' }}>
-          <div className="max-w-3xl mx-auto bg-sky-300 border-sky-300 border">
+          <div className="max-w-3xl mx-auto bg-[#4682B4] border-[#4682B4] border rounded-3xl shadow-lg">
             <div className="p-8 sm:p-12">
-              <Heart className="h-10 w-10 text-gold mx-auto mb-6" fill="currentColor" />
-              <h4 className="font-elegant text-2xl font-semibold text-foreground mb-4">
+              <Heart className="h-10 w-10 text-[#D4AF37] mx-auto mb-6" fill="currentColor" />
+              <h4 className="font-elegant text-2xl font-semibold text-white mb-4">
                 Thank You to Our Wedding Party
               </h4>
               <p className="text-muted-foreground font-modern leading-relaxed">

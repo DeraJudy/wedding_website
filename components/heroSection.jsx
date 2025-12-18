@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import { Heart, Calendar, MapPin, ChevronDown } from "lucide-react";
 import heroImage from "@/assets/hero-wedding.jpg";
@@ -14,8 +14,13 @@ const HeroSection = () => {
     minutes: 0,
     seconds: 0,
   });
+  const [isVisible, setIsVisible] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const heroRef = useRef(null);
 
   useEffect(() => {
+    setMounted(true);
+    
     const weddingDate = new Date(WEDDING_DATE_ISO);
 
     function update() {
@@ -36,14 +41,32 @@ const HeroSection = () => {
       });
     }
 
-    update(); // so it doesn't flash zeros
-
+    update();
     const timer = setInterval(update, 1000);
-    return () => clearInterval(timer);
+
+    // Intersection Observer for animations
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (heroRef.current) {
+      observer.observe(heroRef.current);
+    }
+
+    return () => {
+      clearInterval(timer);
+      observer.disconnect();
+    };
   }, []);
 
   return (
     <section
+      ref={heroRef}
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#87CEEB]"
     >
@@ -76,49 +99,61 @@ const HeroSection = () => {
 
         {/* Names */}
         <div className="text-center">
-          <h1 className="text-6xl sm:text-7xl lg:text-8xl font-romantic font-bold mb-2 tracking-wide">
+          <h1 className={`text-6xl sm:text-7xl lg:text-8xl font-romantic font-bold mb-2 tracking-wide transition-all duration-1000 ease-out ${
+            isVisible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-8 opacity-0 scale-95'
+          }`}>
             Dera
           </h1>
 
           <span
-            className="text-4xl sm:text-5xl mx-3"
-            style={{ color: "#000" }} // Gold colour
+            className={`text-4xl sm:text-5xl mx-3 transition-all duration-1000 ease-out delay-200 ${
+              isVisible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-8 opacity-0 scale-95'
+            }`}
+            style={{ color: "#000" }}
           >
             &
           </span>
 
-          <h1 className="text-6xl sm:text-7xl lg:text-8xl font-romantic font-bold mt-2 mb-6 tracking-wide">
+          <h1 className={`text-6xl sm:text-7xl lg:text-8xl font-romantic font-bold mt-2 mb-6 tracking-wide transition-all duration-1000 ease-out delay-300 ${
+            isVisible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-8 opacity-0 scale-95'
+          }`}>
             Goziem
           </h1>
         </div>
 
-        <p className="text-xl sm:text-2xl font-modern font-light mb-8 text-white/90">
+        <p className={`text-xl sm:text-2xl font-modern font-light mb-8 text-white/90 transition-all duration-1000 ease-out delay-500 ${
+          isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+        }`}>
           We can't wait to celebrate with you!
         </p>
 
-        <div className="animate-fade-in flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
-          <div className="inline-flex items-center space-x-2 bg-white/15 backdrop-blur-md rounded-full px-6 py-3">
+        <div className={`flex flex-col sm:flex-row gap-4 justify-center items-center mb-10 transition-all duration-1000 ease-out delay-700 ${
+          isVisible ? 'translate-x-0 opacity-100' : '-translate-x-8 opacity-0'
+        }`}>
+          <div className="inline-flex items-center space-x-2 bg-white/15 backdrop-blur-md rounded-full px-6 py-3 hover:bg-white/25 transition-all duration-300">
             <Calendar className="h-5 w-5 text-[gold]" />
             <span className="font-modern font-medium">Dec 27, 2025</span>
           </div>
-          <div className="inline-flex items-center space-x-2 bg-white/15 backdrop-blur-md rounded-full px-6 py-3">
+          <div className="inline-flex items-center space-x-2 bg-white/15 backdrop-blur-md rounded-full px-6 py-3 hover:bg-white/25 transition-all duration-300">
             <MapPin className="h-5 w-5 text-gold" />
             <span className="font-modern font-medium">Owerri, Imo State</span>
           </div>
         </div>
 
-        <div
-          className="animate-fade-in mb-12"
-          style={{ animationDelay: "0.5s" }}
-        >
+        <div className={`mb-12 transition-all duration-1000 ease-out delay-900 ${
+          isVisible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-8 opacity-0 scale-95'
+        }`}>
           <p className="text-lg font-modern mb-4 text-sky">
-            {timeLeft.days} days to go ❤️
+            {mounted ? `${timeLeft.days} days to go ❤️` : 'Loading...'}
           </p>
           <div className="grid grid-cols-4 gap-3 sm:gap-4 max-w-md mx-auto">
-            {Object.entries(timeLeft).map(([unit, value]) => (
+            {mounted ? Object.entries(timeLeft).map(([unit, value], index) => (
               <div
                 key={unit}
-                className="bg-white/10 backdrop-blur-md rounded-2xl p-3 sm:p-4 border border-white/20"
+                className={`bg-white/10 backdrop-blur-md rounded-2xl p-3 sm:p-4 border border-white/20 hover:bg-white/20 hover:scale-105 transition-all duration-500 ${
+                  isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'
+                }`}
+                style={{ transitionDelay: `${1100 + index * 100}ms` }}
               >
                 <div className="text-2xl sm:text-4xl font-bold font-elegant text-[gold]">
                   {value}
@@ -127,16 +162,30 @@ const HeroSection = () => {
                   {unit}
                 </div>
               </div>
-            ))}
+            )) : (
+              // Placeholder during SSR
+              ['days', 'hours', 'minutes', 'seconds'].map((unit, index) => (
+                <div
+                  key={unit}
+                  className="bg-white/10 backdrop-blur-md rounded-2xl p-3 sm:p-4 border border-white/20"
+                >
+                  <div className="text-2xl sm:text-4xl font-bold font-elegant text-[gold]">
+                    0
+                  </div>
+                  <div className="text-xs sm:text-sm uppercase tracking-wider font-modern opacity-80">
+                    {unit}
+                  </div>
+                </div>
+              ))
+            )}
           </div>
         </div>
 
-        <div
-          className="animate-fade-in"
-          style={{ animationDelay: "0.6s" }}
-        >
+        <div className={`transition-all duration-1000 ease-out delay-1000 ${
+          isVisible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-8 opacity-0 scale-95'
+        }`}>
           <button
-            className="bg-[skyblue] hover:bg-gold/90 text-foreground font-medium px-10 py-4 rounded-full shadow-gold text-lg inline-flex items-center justify-center"
+            className="bg-[#A89957] hover:bg-[#A89957]/90 hover:scale-105 text-white font-medium px-10 py-4 rounded-full shadow-gold text-lg inline-flex items-center justify-center transition-all duration-300 transform"
             onClick={() =>
               document
                 .getElementById("details")
@@ -148,20 +197,21 @@ const HeroSection = () => {
         </div>
 
         {/* Floating hearts */}
-        <div className="absolute top-32 left-10 animate-bounce">
+        <div className={`absolute top-32 left-10 animate-bounce transition-all duration-1000 delay-1200 ${
+          isVisible ? 'translate-x-0 opacity-100' : '-translate-x-8 opacity-0'
+        }`}>
           <Heart
-            className="h-8 w-8"
-            style={{ color: "#000" }} // Sage Green
+            className="h-8 w-8 hover:scale-110 transition-transform duration-300"
+            style={{ color: "#000" }}
           />
         </div>
 
-        <div
-          className="absolute top-48 right-16 animate-bounce"
-          style={{ animationDelay: "0.7s" }}
-        >
+        <div className={`absolute top-48 right-16 animate-bounce transition-all duration-1000 delay-1400 ${
+          isVisible ? 'translate-x-0 opacity-100' : 'translate-x-8 opacity-0'
+        }`}>
           <Heart
-            className="h-10 w-10"
-            style={{ color: "#87CEEB" }} // Sky Blue
+            className="h-10 w-10 hover:scale-110 transition-transform duration-300"
+            style={{ color: "#87CEEB" }}
           />
         </div>
       </div>
