@@ -5,7 +5,7 @@ const Footer = () => {
     <footer className="bg-white text-black py-12">
       <div className="max-w-6xl mx-auto px-4 text-center">
         <Heart className="h-8 w-8 text-[#D4AF37] mx-auto mb-4" fill="currentColor" />
-        <h3 className="font-elegant text-2xl font-bold mb-4">Dera & Gozie</h3>
+        <h3 className="font-elegant text-2xl font-bold mb-4">Dera & Goziem</h3>
         <p className="text-muted-foreground font-modern mb-6">Dec 27th, 2025 • Owerri, Nigeria</p>
         
         <div className="flex justify-center gap-4 mb-6">
@@ -22,7 +22,7 @@ const Footer = () => {
         </div>
         
         <p className="text-muted-foreground text-sm font-modern">
-          © 2025 DeraGozie Wedding. Made with <Heart className="inline h-3 w-3 text-[gold]" fill="currentColor" /> for our special day.
+          © 2025 DeraGoziem Wedding. Made with <Heart className="inline h-3 w-3 text-[gold]" fill="currentColor" /> for our special day.
         </p>
       </div>
     </footer>

@@ -6,6 +6,7 @@ import oziImg from "@/assets/ozi.jpg";
 import sciraImg from "@/assets/scira.jpg";
 import taiwoImg from "@/assets/taiwo.jpg";
 import wenduImg from "@/assets/wendu.jpg";
+import UdochiImg from "@/assets/Udochi.jpeg"
 import ebukaImg from '@/assets/Ebuka.jpg';
 
 const BridalParty = () => {
@@ -14,7 +15,7 @@ const BridalParty = () => {
       name: "Udochi Nwam",
       role: "Chief Bridesmaid",
       description: "My university roommate turned lifelong friend. She's the voice of joy, peace and the life of every party.",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop&crop=face"
+      image: UdochiImg.src
     },
     {
       name: "Ozi Beke",
@@ -69,25 +70,25 @@ const BridalParty = () => {
       description: "Gozie's brother and partner in crime. They've been through everything together – the most loyal friend.",
       image: ebukaImg.src
       // image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
-    },
-    {
-      name: "Emeka Uche",
-      role: "Groomsman",
-      description: "University roommate and lifelong friend. He's the tech genius who keeps everyone connected.",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face"
-    },
-    {
-      name: "Kunle Adeola",
-      role: "Groomsman",
-      description: "Work colleague turned close friend. He introduced us to the best spots in Lagos.",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face"
-    },
-    {
-      name: "Segun Ajayi",
-      role: "Groomsman",
-      description: "Childhood friend who's been part of the family forever. The storyteller of the group.",
-      image: "https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?w=400&h=400&fit=crop&crop=face"
     }
+    // {
+    //   name: "Emeka Uche",
+    //   role: "Groomsman",
+    //   description: "University roommate and lifelong friend. He's the tech genius who keeps everyone connected.",
+    //   image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face"
+    // },
+    // {
+    //   name: "Kunle Adeola",
+    //   role: "Groomsman",
+    //   description: "Work colleague turned close friend. He introduced us to the best spots in Lagos.",
+    //   image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face"
+    // },
+    // {
+    //   name: "Segun Ajayi",
+    //   role: "Groomsman",
+    //   description: "Childhood friend who's been part of the family forever. The storyteller of the group.",
+    //   image: "https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?w=400&h=400&fit=crop&crop=face"
+    // }
   ];
 
   return (

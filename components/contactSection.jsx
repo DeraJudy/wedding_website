@@ -59,18 +59,21 @@ const ContactSection = () => {
               />
               <h4 className="text-black text-xl font-semibold mb-4">Email</h4>
 
+
               <a
                 href="mailto:alienjudy25@pematrix.com"
                 aria-label="Send us an email"
                 className="w-full py-2 rounded-lg font-medium transition-all 
-             bg-white border-2 border-[#87CEEB] 
-             flex items-center justify-center gap-2
-             hover:bg-[#87CEEB]/10"
+    bg-white border-2 border-[#87CEEB] 
+    flex items-center justify-center gap-2
+    hover:bg-[#87CEEB]/10"
                 style={{ color: "#000" }}
               >
                 <Mail className="h-5 w-5" />
-                <span>alienjudy25@pematrix.com</span>
+                <span>Send us a message</span>
               </a>
+
+
 
             </div>
           </div>

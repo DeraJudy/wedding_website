@@ -10,6 +10,8 @@ import dateImg3 from "@/assets/date3.jpeg";
 import dateImg4 from "@/assets/date4.jpeg";
 import dateImg5 from "@/assets/date5.jpeg";
 import dateImg6 from "@/assets/date6.jpeg";
+import dateImg7 from "@/assets/date7.jpeg";
+import dateImg8 from "@/assets/date8.jpeg";
 
 const categories = [
   { id: "all", label: "All Photos" },
@@ -27,16 +29,16 @@ const galleryImages = [
   // { src: dateImg4, alt: "Engagement ring moment", category: "engagement" },
   // { src: dateImg5, alt: "Dancing together at the reception", category: "fun" },
   { src: dateImg6, alt: "Sunset couple portrait", category: "portraits" },
-  // {
-  //   src: dateImg1,
-  //   alt: "Pre-wedding dinner",
-  //   category: "prewedding",
-  // },
-  // {
-  //   src: dateImg2,
-  //   alt: "Travel adventure together",
-  //   category: "fun",
-  // },
+  {
+    src: dateImg7,
+    alt: "Pre-wedding dinner",
+    category: "prewedding",
+  },
+  {
+    src: dateImg8,
+    alt: "Travel adventure together",
+    category: "fun",
+  },
   {
     src: dateImg4,
     alt: "Romantic classic portrait",
@@ -104,7 +106,7 @@ export default function Gallery() {
         </div>
 
         {/* Categories */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
+        {/* <div className="flex flex-wrap justify-center gap-3 mb-12">
           {categories.map((category) => (
             <button
               key={category.id}
@@ -121,7 +123,7 @@ export default function Gallery() {
               {category.label}
             </button>
           ))}
-        </div>
+        </div> */}
 
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

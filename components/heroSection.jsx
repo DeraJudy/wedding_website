@@ -77,7 +77,7 @@ const HeroSection = () => {
         {/* Names */}
         <div className="text-center">
           <h1 className="text-6xl sm:text-7xl lg:text-8xl font-romantic font-bold mb-2 tracking-wide">
-            Chidera
+            Dera
           </h1>
 
           <span
@@ -88,7 +88,7 @@ const HeroSection = () => {
           </span>
 
           <h1 className="text-6xl sm:text-7xl lg:text-8xl font-romantic font-bold mt-2 mb-6 tracking-wide">
-            Chigoziem
+            Goziem
           </h1>
         </div>
 
