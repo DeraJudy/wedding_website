@@ -1,13 +1,13 @@
 import { Heart, Crown, Sparkles } from 'lucide-react';
-import adaezeImg from "@/assets/adaeze.jpg";
-import divineImg from "@/assets/divine.jpg";
-import idowuImg from "@/assets/idowu.jpg";
-import oziImg from "@/assets/ozi.jpg";
-import sciraImg from "@/assets/scira.jpg";
-import taiwoImg from "@/assets/taiwo.jpg";
-import wenduImg from "@/assets/wendu.jpg";
-import UdochiImg from "@/assets/Udochi.jpeg"
-import ebukaImg from '@/assets/Ebuka.jpg';
+// import adaezeImg from "@/assets/adaeze.jpg";
+// import divineImg from "@/assets/divine.jpg";
+// import idowuImg from "@/assets/idowu.jpg";
+// import oziImg from "@/assets/ozi.jpg";
+// import sciraImg from "@/assets/scira.jpg";
+// import taiwoImg from "@/assets/taiwo.jpg";
+// import wenduImg from "@/assets/wendu.jpg";
+// import UdochiImg from "@/assets/Udochi.jpeg"
+// import ebukaImg from '@/assets/Ebuka.jpg';
 
 const BridalParty = () => {
   const bridesmaids = [
@@ -15,51 +15,51 @@ const BridalParty = () => {
       name: "Udochi Nwam",
       role: "Chief Bridesmaid",
       description: "My university roommate turned lifelong friend. She's the voice of joy, peace and the life of every party.",
-      image: UdochiImg.src
+      image: "https://res.cloudinary.com/diae7jcps/image/upload/v1766076736/Udochi_keb8id.jpg"
     },
     {
       name: "Ozi Beke",
       role: "Bridesmaid",
       description: "My sister and best friend since childhood. The one who always check on me everytime and she is effortlessly cool.",
-      image: oziImg.src
+      image: "https://res.cloudinary.com/diae7jcps/image/upload/v1766076734/ozi_eph3ec.jpg"
     },
     {
       name: "Nwendu Baby",
       role: "Bridesmaid",
       description: "My sister and best friend since childhood. The one who always has my back and makes me laugh until my stomach hurts.",
       // description: "My work bestie who became family. She's always ready for an adventure and gives the best advice.",
-      image: wenduImg.src
+      image: "https://res.cloudinary.com/diae7jcps/image/upload/v1766076737/wendu_oelnwg.jpg"
     },
     {
       name: "Divine",
       role: "Bridesmaid",
-      description: "My cousin and the one who introduced me to the magical world of K-dramas and cartoons. Gentle fun-loving",
+      description: "My cousin and the one who introduced me to the magical world of K-dramas and cartoons. Gentle and fun-loving",
       // description: "My childhood friend who knows all my secrets. She's been there through every milestone.",
-      image: divineImg.src
+      image: "https://res.cloudinary.com/diae7jcps/image/upload/v1766076739/divine_ws6xzx.jpg"
     },
     {
       name: "Adaeze",
       role: "Bridesmaid",
-      description: "My cousin and one of my forever sisters — sweet, stylish, and always showing up with love and laughter.",
-      image: adaezeImg.src
+      description: "My cousin and one of my forever sisters. Sweet, stylish, and always showing up with love and laughter.",
+      image: "https://res.cloudinary.com/diae7jcps/image/upload/v1766076732/adaeze_iwrrd7.jpg"
     },
     {
       name: "Scira",
       role: "Bridesmaid",
-      description: "My year-one roommate turned lifelong friend — always ready with movie recommendations and good vibes ",
-      image: sciraImg.src
+      description: "My year-one roommate turned lifelong friend, always ready with movie recommendations and good vibes ",
+      image: "https://res.cloudinary.com/diae7jcps/image/upload/v1766076735/scira_md85vs.jpg"
     },
     {
       name: "Idowu",
       role: "Bridesmaid",
-      description: "A friend I met during my service year — ambitious, curious, and always eager to learn. She is Fun.",
-      image: idowuImg.src
+      description: "A friend I met during my service year, ambitious, curious, and always eager to learn. She is Fun.",
+      image: "https://res.cloudinary.com/diae7jcps/image/upload/v1766076734/idowu_izw6we.jpg"
     },
     {
       name: "Mercy",
       role: "Bridesmaid",
-      description: "A friend I met during a training class — her joy and excitement to be part of our wedding means so much to me.",
-      image: taiwoImg.src
+      description: "A friend I met during a training class, her joy and excitement to be part of our wedding means so much to me.",
+      image: "https://res.cloudinary.com/diae7jcps/image/upload/v1766076736/taiwo_ouzkjb.jpg"
     }
   ];
 
@@ -68,7 +68,7 @@ const BridalParty = () => {
       name: "Matthew ",
       role: "Best Man",
       description: "Fondly known as Father Ebuka, Matthew is a man of faith, depth, and uncommon resilience. Brilliant, disciplined, hardworking, and focused, he is the kind of person who stands firm in hard times. You don’t need a motivational speaker when you have Matthew — he lives his gospel. With him by your side, giving up simply isn’t an option; as we like to say, you can’t have a Matthew and give up… we die here 😄. His loyalty, strength, and unwavering support make him more than a friend — he’s family.",
-      image: ebukaImg.src
+      image: "https://res.cloudinary.com/diae7jcps/image/upload/v1766076739/Ebuka_qagz6t.jpg"
       // image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
     }
     // {

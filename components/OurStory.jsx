@@ -44,11 +44,11 @@ const OurStory = () => {
   ];
 
   const photos = [
-    dateImg5,
-    dateImg1,
-    dateImg4,
-    dateImg6,
-    dateImg16,
+    "https://res.cloudinary.com/diae7jcps/image/upload/v1766076737/WhatsApp_Image_2025-12-16_at_02.32.23_1_splmih.jpg",
+    "https://res.cloudinary.com/diae7jcps/image/upload/v1766076731/date1_uq7ycb.jpg",
+    "https://res.cloudinary.com/diae7jcps/image/upload/v1766076732/date4_nphdqm.jpg",
+    "https://res.cloudinary.com/diae7jcps/image/upload/v1766076741/date6_kztfxb.jpg",
+    // dateImg16,
   ];
 
   return (
@@ -129,18 +129,19 @@ const OurStory = () => {
           </div>
 
           <div className="flex overflow-x-auto gap-4 pb-4 snap-x snap-mandatory">
-            {photos.map((photo, index) => (
-              <div key={index} className="shrink-0 snap-center">
-                <Image
-                  src={photo}
-                  alt={`Our memory ${index + 1}`}
-                  width={224}
-                  height={224}
-                  className="w-48 h-48 sm:w-56 sm:h-56 object-cover rounded-2xl shadow-soft hover:shadow-romantic transition"
-                />
-              </div>
-            ))}
-          </div>
+  {photos.map((photo, index) => (
+    <div key={index} className="shrink-0 snap-center">
+      <Image
+        src={photo}
+        alt={`Our memory ${index + 1}`}
+        width={224}
+        height={224}
+        className="w-48 h-48 sm:w-56 sm:h-56 object-cover rounded-2xl shadow-soft hover:shadow-romantic transition"
+      />
+    </div>
+  ))}
+</div>
+
         </div>
 
         {/* Quote */}
