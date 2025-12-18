@@ -22,7 +22,7 @@ const Footer = () => {
         </div>
         
         <p className="text-muted-foreground text-sm font-modern">
-          © 2025 alienjudy25 Wedding. Made with <Heart className="inline h-3 w-3 text-[gold]" fill="currentColor" /> for our special day.
+          © 2025 Pematrix . Made with <Heart className="inline h-3 w-3 text-[gold]" fill="currentColor" /> for our special day.
         </p>
       </div>
     </footer>

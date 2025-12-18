@@ -9,6 +9,7 @@ import dateImg3 from "@/assets/date3.jpeg";
 import dateImg4 from "@/assets/date4.jpeg";
 import dateImg5 from "@/assets/date5.jpeg";
 import dateImg6 from "@/assets/date6.jpeg";
+import dateImg16 from "@/assets/date16.jpg";
 
 const OurStory = () => {
   const storyMilestones = [
@@ -43,9 +44,11 @@ const OurStory = () => {
   ];
 
   const photos = [
+    dateImg5,
     dateImg1,
     dateImg4,
     dateImg6,
+    dateImg16,
   ];
 
   return (
