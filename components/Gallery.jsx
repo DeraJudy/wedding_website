@@ -1,7 +1,15 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { X, ChevronLeft, ChevronRight, Heart, Camera } from "lucide-react";
+
+import dateImg1 from "@/assets/date1.jpeg";
+import dateImg2 from "@/assets/date2.jpeg";
+import dateImg3 from "@/assets/date3.jpeg";
+import dateImg4 from "@/assets/date4.jpeg";
+import dateImg5 from "@/assets/date5.jpeg";
+import dateImg6 from "@/assets/date6.jpeg";
 
 const categories = [
   { id: "all", label: "All Photos" },
@@ -13,61 +21,41 @@ const categories = [
 ];
 
 const galleryImages = [
+  // { src: dateImg1, alt: "Pre-wedding beach shoot", category: "prewedding" },
+  { src: dateImg2, alt: "Traditional ceremony setup", category: "traditional" },
+  { src: dateImg3, alt: "Couple laughing together", category: "fun" },
+  // { src: dateImg4, alt: "Engagement ring moment", category: "engagement" },
+  // { src: dateImg5, alt: "Dancing together at the reception", category: "fun" },
+  { src: dateImg6, alt: "Sunset couple portrait", category: "portraits" },
+  // {
+  //   src: dateImg1,
+  //   alt: "Pre-wedding dinner",
+  //   category: "prewedding",
+  // },
+  // {
+  //   src: dateImg2,
+  //   alt: "Travel adventure together",
+  //   category: "fun",
+  // },
   {
-    src: "https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=900&h=1200&fit=crop",
-    alt: "Pre-wedding beach shoot",
-    category: "prewedding",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=900&h=600&fit=crop",
-    alt: "Traditional ceremony setup",
-    category: "traditional",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=900&h=900&fit=crop",
-    alt: "Couple laughing together",
-    category: "fun",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1469371670807-013ccf25f16a?w=900&h=900&fit=crop",
-    alt: "Engagement ring moment",
-    category: "engagement",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=900&h=600&fit=crop",
-    alt: "Dancing together at the reception",
-    category: "fun",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1469371670807-013ccf25f16a?w=900&h=900&fit=crop",
-    alt: "Sunset couple portrait",
-    category: "portraits",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?w=900&h=1200&fit=crop",
-    alt: "Pre-wedding dinner",
-    category: "prewedding",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1529636798458-92182e662485?w=900&h=600&fit=crop",
-    alt: "Travel adventure together",
-    category: "fun",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=900&h=600&fit=crop",
+    src: dateImg4,
     alt: "Romantic classic portrait",
     category: "portraits",
   },
 ];
 
-const Gallery = () => {
-  const [selectedImageIndex, setSelectedImageIndex] = useState(null);
+export default function Gallery() {
   const [activeCategory, setActiveCategory] = useState("all");
+  const [selectedImageIndex, setSelectedImageIndex] = useState(null);
 
   const filteredImages =
     activeCategory === "all"
       ? galleryImages
       : galleryImages.filter((img) => img.category === activeCategory);
+
+  // SAFE derived value (prevents undefined crash)
+  const selectedImage =
+    selectedImageIndex !== null ? filteredImages[selectedImageIndex] : null;
 
   const openModal = (index) => {
     setSelectedImageIndex(index);
@@ -80,15 +68,19 @@ const Gallery = () => {
   };
 
   const navigateImage = (direction) => {
-    if (selectedImageIndex === null) return;
+    if (!selectedImage) return;
 
     const lastIndex = filteredImages.length - 1;
-    const newIndex =
-      direction === "prev"
-        ? (selectedImageIndex === 0 ? lastIndex : selectedImageIndex - 1)
-        : (selectedImageIndex === lastIndex ? 0 : selectedImageIndex + 1);
 
-    setSelectedImageIndex(newIndex);
+    setSelectedImageIndex((prev) =>
+      direction === "prev"
+        ? prev === 0
+          ? lastIndex
+          : prev - 1
+        : prev === lastIndex
+        ? 0
+        : prev + 1
+    );
   };
 
   return (
@@ -99,7 +91,7 @@ const Gallery = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
-        <div className="text-center mb-12 animate-fade-in">
+        <div className="text-center mb-12">
           <p className="text-[gold] uppercase tracking-widest text-sm mb-4">
             Captured Moments
           </p>
@@ -107,20 +99,20 @@ const Gallery = () => {
             Our Gallery
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto font-modern">
-            A collection of our favorite memories together – from quiet, intimate moments to joyful celebrations.
+            A collection of our favorite memories together – from quiet moments to joyful celebrations.
           </p>
         </div>
 
-        {/* Category Buttons */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12 animate-fade-in">
+        {/* Categories */}
+        <div className="flex flex-wrap justify-center gap-3 mb-12">
           {categories.map((category) => (
             <button
               key={category.id}
               onClick={() => {
-                setActiveCategory(category.id);
                 setSelectedImageIndex(null);
+                setActiveCategory(category.id);
               }}
-              className={`px-5 py-2 rounded-full font-modern text-sm transition-all duration-300 ${
+              className={`px-5 py-2 rounded-full text-sm transition ${
                 activeCategory === category.id
                   ? "bg-gold text-black shadow-romantic"
                   : "bg-[#9CAF88] text-white hover:opacity-90"
@@ -131,26 +123,27 @@ const Gallery = () => {
           ))}
         </div>
 
-        {/* Gallery Grid */}
+        {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredImages.map((image, index) => (
             <div
               key={index}
-              className="group cursor-pointer overflow-hidden rounded-2xl shadow-soft hover:shadow-romantic transition-all duration-300 hover:-translate-y-2 bg-white"
-              style={{ animationDelay: `${0.25 + index * 0.08}s` }}
               onClick={() => openModal(index)}
+              className="group cursor-pointer overflow-hidden rounded-2xl bg-white shadow-soft hover:shadow-romantic transition"
             >
-              <div className="relative">
-                <img
+              <div className="relative aspect-[3/4]">
+                <Image
                   src={image.src}
                   alt={image.alt}
-                  className="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-110"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover rounded-2xl"
                 />
-                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 
-                transition-opacity duration-300 flex items-end justify-center pb-5">
+
+                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-end justify-center pb-5">
                   <div className="flex items-center gap-2 text-white">
                     <Camera className="h-5 w-5" />
-                    <span className="font-modern text-sm">View Photo</span>
+                    <span className="text-sm">View Photo</span>
                   </div>
                 </div>
               </div>
@@ -159,73 +152,63 @@ const Gallery = () => {
         </div>
 
         {/* Modal */}
-        {selectedImageIndex !== null && filteredImages[selectedImageIndex] && (
+        {selectedImage && (
           <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
-            <div className="relative max-w-4xl max-h-full">
+            <div className="relative max-w-4xl w-full">
 
-              {/* Close */}
               <button
-                className="absolute top-4 right-4 text-white hover:bg-white/20 rounded-full p-2"
                 onClick={closeModal}
+                className="absolute top-4 right-4 text-white p-2 hover:bg-white/20 rounded-full"
               >
-                <X className="h-6 w-6" />
+                <X />
               </button>
 
-              {/* Prev */}
               <button
-                className="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:bg-white/20 rounded-full p-2"
                 onClick={() => navigateImage("prev")}
+                className="absolute left-4 top-1/2 -translate-y-1/2 text-white p-2 hover:bg-white/20 rounded-full"
               >
-                <ChevronLeft className="h-8 w-8" />
+                <ChevronLeft size={32} />
               </button>
 
-              {/* Next */}
               <button
-                className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:bg-white/20 rounded-full p-2"
                 onClick={() => navigateImage("next")}
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-white p-2 hover:bg-white/20 rounded-full"
               >
-                <ChevronRight className="h-8 w-8" />
+                <ChevronRight size={32} />
               </button>
 
-              <img
-                src={filteredImages[selectedImageIndex].src}
-                alt=""
-                className="max-w-full max-h-[85vh] object-contain rounded-xl"
+              <Image
+                src={selectedImage.src}
+                alt={selectedImage.alt}
+                width={1200}
+                height={1600}
+                className="max-h-[85vh] mx-auto object-contain rounded-xl"
               />
 
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white/90 text-black px-6 py-2 rounded-full font-modern text-sm">
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white/90 px-6 py-2 rounded-full text-sm">
                 {selectedImageIndex + 1} of {filteredImages.length}
               </div>
             </div>
           </div>
         )}
 
-        {/* Hashtag Section */}
-        <div className="text-center mt-16 animate-fade-in">
-          <div className="max-w-2xl mx-auto bg-[#9dac8e] border border-gold/40 rounded-3xl shadow-soft">
-            <div className="p-10">
-              <Heart className="h-8 w-8 text-[gold] mx-auto mb-4" fill="currentColor" />
-              <h4 className=" text-2xl font-semibold text-black mb-4">
-                Share Your Moments With Us
-              </h4>
-              <p className="text-gray-600 font-modern mb-6">
-                Tag your photos from the day — we'd love to see them!
-              </p>
-
-              <button className="inline-flex items-center gap-2 rounded-full 
-              bg-[gold] px-8 py-3 text-gray-800 font-medium transition 
-              hover:bg-[gold]/90">
-                #alienJudy25
-              </button>
-
-
-            </div>
+        {/* Hashtag */}
+        <div className="text-center mt-16">
+          <div className="max-w-2xl mx-auto bg-[#9dac8e] rounded-3xl shadow-soft p-10">
+            <Heart className="h-8 w-8 text-[gold] mx-auto mb-4" fill="currentColor" />
+            <h4 className="text-2xl font-semibold mb-4">
+              Share Your Moments With Us
+            </h4>
+            <p className="text-gray-600 mb-6">
+              Tag your photos from the day — we'd love to see them!
+            </p>
+            <span className="inline-block bg-[gold] px-8 py-3 rounded-full font-medium">
+              #alienJudy25
+            </span>
           </div>
         </div>
 
       </div>
     </section>
   );
-};
-
-export default Gallery;
+}

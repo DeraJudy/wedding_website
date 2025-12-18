@@ -52,6 +52,35 @@ const WeddingDetails = () => {
     { name: "Gold", color: "#D4AF37" }
   ];
 
+  const meetingLink = "https://meet.google.com/kcf-euub-pnm";
+
+  const handleClick = () => {
+    const today = new Date();
+    const eventDate = new Date("2025-12-27T10:00:00"); // Church time
+
+    const isSameDay =
+      today.getFullYear() === eventDate.getFullYear() &&
+      today.getMonth() === eventDate.getMonth() &&
+      today.getDate() === eventDate.getDate();
+
+    if (isSameDay) {
+      // Open Google Meet on the wedding day
+      window.open(meetingLink, "_blank");
+    } else {
+      // Create Google Calendar event
+      const start = "20251227T090000Z";
+      const end = "20251227T160000Z";
+
+      const calendarUrl = `https://www.google.com/calendar/render?action=TEMPLATE
+        &text=Wedding+of+Dera+and+Gozie
+        &details=Join+us+to+celebrate+our+wedding.+Google+Meet:+${encodeURIComponent(meetingLink)}
+        &location=Google+Meet
+        &dates=${start}/${end}`.replace(/\s/g, "");
+
+      window.open(calendarUrl, "_blank");
+    }
+  };
+
   return (
     <section id="details" className="pt-24 pb-6">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -65,12 +94,13 @@ const WeddingDetails = () => {
             Wedding Details
           </h2>
           <p className="text-lg text-gray-500 max-w-2xl mx-auto font-modern">
-            Everything you need to know about our special day. Mark your calendars and get ready to celebrate with us!
+            Everything you need to know about our special day. Mark your calendars and get ready
+            to celebrate with us!
           </p>
         </div>
 
         {/* Date Card */}
-        <div className="mb-12 shadow-elegant bg-[#F3F7F2] rounded-2xl animate-fade-in">
+        {/* <div className="mb-12 shadow-elegant bg-[#F3F7F2] rounded-2xl animate-fade-in">
           <div className="p-8 sm:p-12 text-center">
             <Calendar className="h-12 w-12 text-[gold] mx-auto mb-6" />
             <h3 className="text-3xl sm:text-4xl font-bold text-gray-700 mb-4">
@@ -78,6 +108,24 @@ const WeddingDetails = () => {
             </h3>
             <p className="text-xl text-gray-500 font-modern">
               Church Ceremony: 10:00 AM | Reception: 2:00 PM
+            </p>
+          </div>
+        </div> */}
+
+        <div
+          onClick={handleClick}
+          className="mb-12 shadow-elegant bg-[#F3F7F2] rounded-2xl animate-fade-in cursor-pointer hover:shadow-xl transition"
+        >
+          <div className="p-8 sm:p-12 text-center">
+            <Calendar className="h-12 w-12 text-[gold] mx-auto mb-6" />
+            <h3 className="text-3xl sm:text-4xl font-bold text-gray-700 mb-4">
+              Saturday, December 27th, 2025
+            </h3>
+            <p className="text-xl text-gray-500 font-modern">
+              Church Ceremony: 10:00 AM | Reception: 2:00 PM
+            </p>
+            <p className="mt-4 text-sm font-bold text-[skyblue]">
+              Click to add to calendar or join live on the wedding day
             </p>
           </div>
         </div>

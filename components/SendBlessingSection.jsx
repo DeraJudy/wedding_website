@@ -103,33 +103,46 @@ const SendBlessingSection = () => {
         </div>
 
 
-        {/* Buy Me a Coffee */}
-        <div
-          className="animate-fade-in bg-white rounded-2xl border border-gray-200 shadow-soft"
-          style={{ animationDelay: '0.4s' }}
-        >
-          <div className="p-8 text-center">
-            <Coffee className="h-10 w-10 text-[gold] mx-auto mb-4" />
+       {/* Wedding Gift (Paystack) */}
+<div
+  className="animate-fade-in bg-white rounded-3xl border border-gray-200 shadow-soft hover:shadow-lg transition-all"
+  style={{ animationDelay: '0.4s' }}
+>
+  <div className="p-8 text-center">
+    {/* Icon */}
+    <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[gold]/15">
+      <Heart className="h-7 w-7 text-[gold]" fill="currentColor" />
+    </div>
 
-            <h4 className="font-elegant text-xl font-semibold text-black mb-2">
-              Send a Little Love
-            </h4>
+    {/* Title */}
+    <h4 className="font-elegant text-2xl font-semibold text-black mb-2">
+      Send a Wedding Gift
+    </h4>
 
-            <p className="text-gray-600 font-modern mb-6">
-              Support us through Buy Me a Coffee
-            </p>
+    {/* Description */}
+    <p className="text-gray-600 font-modern mb-6 max-w-xs mx-auto">
+      If you’d like to bless us as we begin this beautiful journey together,
+      we would be truly grateful.
+    </p>
 
-            <button
-              onClick={() =>
-                window.open('https://buymeacoffee.com/deragozie', '_blank')
-              }
-              className="inline-flex items-center gap-2 rounded-full bg-[gold] px-8 py-3 text-gray-800 font-medium transition hover:bg-[gold]/90"
-            >
-              <Heart className="h-5 w-5" fill="currentColor" />
-              Buy Us a Coffee
-            </button>
-          </div>
-        </div>
+    {/* Button */}
+    <button
+      onClick={() =>
+        window.open('https://paystack.shop/pay/gs883ek7jy', '_blank')
+      }
+      className="inline-flex items-center gap-2 rounded-full bg-[gold] px-8 py-3 text-gray-800 font-medium transition hover:bg-[gold]/90 hover:scale-[1.02]"
+    >
+      <Heart className="h-5 w-5" fill="currentColor" />
+      Send a Gift
+    </button>
+
+    {/* Subtext */}
+    <p className="mt-4 text-xs text-gray-500">
+      Secure payment • Local & international cards accepted
+    </p>
+  </div>
+</div>
+
 
       </div>
     </section>
