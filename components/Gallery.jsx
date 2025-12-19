@@ -19,6 +19,8 @@ import dateImg12 from "@/assets/date12.jpg";
 import dateImg13 from "@/assets/date13.jpg";
 import dateImg14 from "@/assets/date14.jpg";
 import dateImg15 from "@/assets/date15.jpg";
+import dateImg16 from "@/assets/date15.jpg";
+
 
 const categories = [
   { id: "all", label: "All Photos" },
@@ -30,38 +32,58 @@ const categories = [
 ];
 
 const galleryImages = [
-  { src: dateImg12, alt: "Pre-wedding beach shoot", category: "prewedding" },
-  { src: dateImg2, alt: "Traditional ceremony setup", category: "traditional" },
-  { src: dateImg3, alt: "Couple laughing together", category: "fun" },
-  { src: dateImg14, alt: "Engagement ring moment", category: "engagement" },
-  { src: dateImg6, alt: "Sunset couple portrait", category: "portraits" },
+  { 
+    src: "https://res.cloudinary.com/diae7jcps/image/upload/v1766076735/date7_h0rc4t.jpg", 
+    alt: "Pre-wedding beach shoot", 
+    category: "prewedding" },
+  { 
+    src: "https://res.cloudinary.com/diae7jcps/image/upload/v1766076735/date8_grsqco.jpg", 
+    alt: "Traditional ceremony setup", 
+    category: "traditional" 
+  },
+  { src: dateImg16, alt: "Dancing together at the reception", category: "fun" },
+  { 
+    src: "https://res.cloudinary.com/diae7jcps/image/upload/v1766076741/date9_bqwhfg.jpg", 
+    alt: "Couple laughing together", 
+    category: "fun" 
+  },
+  { 
+    src: "https://res.cloudinary.com/diae7jcps/image/upload/v1766076732/date3_tzbw1q.jpg", 
+    alt: "Engagement ring moment", 
+    category: "engagement" 
+  },
+  { 
+    src: "https://res.cloudinary.com/diae7jcps/image/upload/v1766076739/date12_m7auoe.jpg", 
+    alt: "Sunset couple portrait", 
+    category: "portraits" 
+  },
   {
-    src: dateImg7,
+    src: "https://res.cloudinary.com/diae7jcps/image/upload/v1766076731/date1_uq7ycb.jpg",
     alt: "Pre-wedding dinner",
     category: "prewedding",
   },
    { src: dateImg13, alt: "Dancing together at the reception", category: "fun" },
-  {
-    src: dateImg8,
-    alt: "Travel adventure together",
-    category: "fun",
-  },
-  {
-    src: dateImg9,
-    alt: "Travel adventure together",
-    category: "fun",
-  },
-  {
-    src: dateImg10,
-    alt: "Travel adventure together",
-    category: "fun",
-  },
-   { src: dateImg15, alt: "Dancing together at the reception", category: "fun" },
-  {
-    src: dateImg4,
-    alt: "Romantic classic portrait",
-    category: "portraits",
-  },
+  // {
+  //   src: dateImg8,
+  //   alt: "Travel adventure together",
+  //   category: "fun",
+  // },
+  // {
+  //   src: dateImg9,
+  //   alt: "Travel adventure together",
+  //   category: "fun",
+  // },
+  // {
+  //   src: dateImg10,
+  //   alt: "Travel adventure together",
+  //   category: "fun",
+  // },
+  //  { src: dateImg15, alt: "Dancing together at the reception", category: "fun" },
+  // {
+  //   src: dateImg4,
+  //   alt: "Romantic classic portrait",
+  //   category: "portraits",
+  // },
 ];
 
 export default function Gallery() {

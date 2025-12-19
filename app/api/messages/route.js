@@ -2,47 +2,35 @@ import { NextResponse } from "next/server";
 import { connectDB } from "@/lib/config/db";
 import Message from "@/lib/models/Messages";
 
+// GET all messages
 export async function GET() {
-  try {
-    await connectDB();
+  await connectDB();
 
-    const messages = await Message.find()
-      .sort({ createdAt: -1 })
-      .lean();
+  const messages = await Message.find({})
+    .sort({ createdAt: -1 })
+    .lean();
 
-    return NextResponse.json(messages);
-  } catch (error) {
-    return NextResponse.json(
-      { error: "Failed to fetch messages" },
-      { status: 500 }
-    );
-  }
+  // ✅ ALWAYS return an array
+  return NextResponse.json(messages);
 }
 
+// POST a new message
 export async function POST(req) {
-  try {
-    await connectDB();
+  await connectDB();
 
-    const body = await req.json();
-    const { name, message } = body;
+  const { name, message } = await req.json();
 
-    if (!name || !message) {
-      return NextResponse.json(
-        { error: "Name and message are required" },
-        { status: 400 }
-      );
-    }
-
-    const newMessage = await Message.create({
-      name,
-      message,
-    });
-
-    return NextResponse.json(newMessage, { status: 201 });
-  } catch (error) {
+  if (!name || !message) {
     return NextResponse.json(
-      { error: "Failed to save message" },
-      { status: 500 }
+      { error: "Missing fields" },
+      { status: 400 }
     );
   }
+
+  const newMessage = await Message.create({
+    name,
+    message,
+  });
+
+  return NextResponse.json(newMessage, { status: 201 });
 }

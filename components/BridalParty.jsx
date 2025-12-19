@@ -65,30 +65,30 @@ const BridalParty = () => {
 
   const groomsmen = [
     {
-      name: "Matthew ",
+      name: "Matthew Ekeanyanwu",
       role: "Best Man",
-      description: "Fondly known as Father Ebuka, Matthew is a man of faith, depth, and uncommon resilience. Brilliant, disciplined, hardworking, and focused, he is the kind of person who stands firm in hard times. You don’t need a motivational speaker when you have Matthew — he lives his gospel. With him by your side, giving up simply isn’t an option; as we like to say, you can’t have a Matthew and give up… we die here 😄. His loyalty, strength, and unwavering support make him more than a friend — he’s family.",
+      description: "Fondly known as Father Ebuka, Matthew is one of the people Goziem leans on in hard times. Disciplined, faith-driven, and deeply resilient, he lives his gospel daily, you don’t need a motivational speaker when you have Matthew by your side. With him around, giving up simply isn’t an option 😄.",
       image: "https://res.cloudinary.com/diae7jcps/image/upload/v1766076739/Ebuka_qagz6t.jpg"
       // image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
+    },
+    {
+      name: "Valentine Eze",
+      role: "Groomsman",
+      description: "Valentine is a senior software engineer whose passion for building meaningful products mirrors Goziem’s own love for solving real-world problems. United by faith and purpose, their conversations often move seamlessly between tech, values, and service, the kind of friendship built on substance and vision.",
+      image: "https://res.cloudinary.com/diae7jcps/image/upload/v1766105928/Valentine_mv4hxb.jpg"
+    },
+    {
+      name: "Michael",
+      role: "Groomsman",
+      description: "Michael is Goziem’s athletic cousin, steadily chasing his dreams one game at a time. His determination, discipline, and never-quit mindset are qualities Goziem deeply respects and draws inspiration from.",
+      image: "https://res.cloudinary.com/diae7jcps/image/upload/v1766105987/MIcheal_zbjmck.jpg"
+    },
+    {
+      name: "Elijah Eze",
+      role: "Groomsman",
+      description: "Elijah brings a perfect mix of brilliance and joy into Goziem’s circle. A talented software engineer, instructor, and musical guru, he’s also the life of the party, reminding Goziem that while excellence matters, laughter and good company matter just as much.",
+      image: "https://res.cloudinary.com/diae7jcps/image/upload/v1766105941/Elijah_vojpwy.jpg"
     }
-    // {
-    //   name: "Emeka Uche",
-    //   role: "Groomsman",
-    //   description: "University roommate and lifelong friend. He's the tech genius who keeps everyone connected.",
-    //   image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face"
-    // },
-    // {
-    //   name: "Kunle Adeola",
-    //   role: "Groomsman",
-    //   description: "Work colleague turned close friend. He introduced us to the best spots in Lagos.",
-    //   image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face"
-    // },
-    // {
-    //   name: "Segun Ajayi",
-    //   role: "Groomsman",
-    //   description: "Childhood friend who's been part of the family forever. The storyteller of the group.",
-    //   image: "https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?w=400&h=400&fit=crop&crop=face"
-    // }
   ];
 
   return (

@@ -45,21 +45,21 @@ const OurStory = () => {
       date: "June 2023",
       title: "A Seed Planted 🌱",
       description:
-        "Every love story starts somewhere — ours began with a conversation. Chidera was a young software developer, fresh out of Imo State University, waiting to begin her NYSC journey. Through a long-standing family connection, her name came up in a casual conversation with my dad. I didn’t know her yet, but I liked what I heard. Curious, I reached out to my younger brother, who had been mentoring her, only to be told, “If you want to know her, go and find out yourself.” So I did. On June 3rd, 2023, I reached out — nervous but hopeful. What began as professional mentorship slowly turned into genuine friendship.",
+        "Every love story starts somewhere, ours began with a conversation. Chidera was a young software developer, fresh out of Imo State University, waiting to begin her NYSC journey. Through a long-standing family connection, her name came up in a casual conversation with my dad. I didn’t know her yet, but I liked what I heard. Curious, I reached out to my younger brother, who had been mentoring her, only to be told, “If you want to know her, go and find out yourself.” So I did. On June 3rd, 2023, I reached out nervous but hopeful. What began as professional mentorship slowly turned into genuine friendship.",
     },
     {
       icon: Calendar,
       date: "August – September 2023",
       title: "From Mentors to Something More 💻❤️",
       description:
-        "What started as guidance soon became connection. Working closely together allowed us to see beyond code and projects. We laughed, learned, and grew — not just as professionals, but as people. When I finally expressed my feelings, Chidera set a boundary: she couldn’t date someone she hadn’t met in person. Distance stood between us, but we agreed to let the first meeting decide.",
+        "What started as guidance soon became connection. Working closely together allowed us to see beyond code and projects. We laughed, learned, and grew, not just as professionals, but as people. When I finally expressed my feelings, Chidera set a boundary: she couldn’t date someone she hadn’t met in person. Distance stood between us, but we agreed to let the first meeting decide.",
     },
     {
       icon: Sparkles,
       date: "October 2023",
       title: "October 13th — Love Chose Us 🎬🏖️",
       description:
-        "On October 12th, 2023, we met for the first time in Lagos. Our first date was at the movies, but the film didn’t stand a chance against her smile. The next day at Badagry Beach, I asked the question — and she said yes. That moment marked the official beginning of us.",
+        "On October 12th, 2023, we met for the first time in Lagos. Our first date was at the movies, but the film didn’t stand a chance against her smile. The next day at Badagry Beach, I asked the question and she said yes. That moment marked the official beginning of us.",
     },
     {
       icon: Diamond,
