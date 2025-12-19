@@ -5,6 +5,7 @@ import Gallery from "@/components/Gallery";
 import GuestMessages from "@/components/GuestMessages";
 import HeroSection from "@/components/heroSection";
 import Navigation from "@/components/Navigation";
+import Officials from "@/components/Officials";
 import OurStory from "@/components/OurStory"
 import SendBlessingSection from "@/components/SendBlessingSection";
 import WeddingDetails from "@/components/WeddingDetails";
@@ -19,6 +20,7 @@ export default function Home() {
    <WeddingDetails /> 
    <Gallery />
    <BridalParty />
+   <Officials />
    <SendBlessingSection />
    <GuestMessages />
     <ContactSection />

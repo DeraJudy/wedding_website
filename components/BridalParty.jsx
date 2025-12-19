@@ -1,15 +1,32 @@
+"use client";
+import { useEffect, useRef, useState } from 'react';
 import { Heart, Crown, Sparkles } from 'lucide-react';
-// import adaezeImg from "@/assets/adaeze.jpg";
-// import divineImg from "@/assets/divine.jpg";
-// import idowuImg from "@/assets/idowu.jpg";
-// import oziImg from "@/assets/ozi.jpg";
-// import sciraImg from "@/assets/scira.jpg";
-// import taiwoImg from "@/assets/taiwo.jpg";
-// import wenduImg from "@/assets/wendu.jpg";
-// import UdochiImg from "@/assets/Udochi.jpeg"
-// import ebukaImg from '@/assets/Ebuka.jpg';
 
 const BridalParty = () => {
+  const [visibleCards, setVisibleCards] = useState(new Set());
+  const sectionRef = useRef(null);
+  const cardRefs = useRef([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = parseInt(entry.target.dataset.index);
+            setVisibleCards(prev => new Set([...prev, index]));
+          }
+        });
+      },
+      { threshold: 0.2, rootMargin: '50px' }
+    );
+
+    cardRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   const bridesmaids = [
     {
       name: "Udochi Nwam",
@@ -121,8 +138,16 @@ const BridalParty = () => {
             {bridesmaids.map((person, index) => (
               <div
                 key={index}
-                className="shadow-soft hover:shadow-romantic transition-all duration-300 hover:-translate-y-2 bg-card/80 backdrop-blur-sm border-primary/10 animate-fade-in"
-                style={{ animationDelay: `${0.3 + index * 0.1}s` }}
+                ref={el => cardRefs.current[index] = el}
+                data-index={index}
+                className={`transform transition-all duration-1000 ease-out ${
+                  visibleCards.has(index) 
+                    ? 'translate-y-0 opacity-100 scale-100' 
+                    : 'translate-y-20 opacity-0 scale-95'
+                } shadow-soft hover:shadow-romantic hover:-translate-y-2 bg-card/80 backdrop-blur-sm border-primary/10`}
+                style={{ 
+                  transitionDelay: visibleCards.has(index) ? `${index * 150}ms` : '0ms'
+                }}
               >
                 <div className="p-6 bg-white text-center rounded-2xl">
                   <div className="relative mb-6">
@@ -170,12 +195,18 @@ const BridalParty = () => {
             {groomsmen.map((person, index) => (
               <div
                 key={index}
-                className="grid gap-8 px-6 justify-center place-items-center
-                  [grid-template-columns:repeat(auto-fit,minmax(250px,1fr))]
-                  max-w-6xl mx-auto"
-                style={{ animationDelay: `${0.8 + index * 0.1}s` }}
+                ref={el => cardRefs.current[bridesmaids.length + index] = el}
+                data-index={bridesmaids.length + index}
+                className={`transform transition-all duration-1000 ease-out ${
+                  visibleCards.has(bridesmaids.length + index) 
+                    ? 'translate-y-0 opacity-100 scale-100' 
+                    : 'translate-y-20 opacity-0 scale-95'
+                } shadow-soft hover:shadow-romantic hover:-translate-y-2 bg-card/80 backdrop-blur-sm border-primary/10`}
+                style={{ 
+                  transitionDelay: visibleCards.has(bridesmaids.length + index) ? `${index * 150}ms` : '0ms'
+                }}
               >
-                <div className="p-6 text-center bg-white rounded-2xl">
+                <div className="p-6 bg-white text-center rounded-2xl">
                   <div className="relative mb-6">
                     <div className="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-accent/20 shadow-soft">
                       <img
@@ -189,10 +220,8 @@ const BridalParty = () => {
                         <Sparkles className="h-4 w-4" />
                       </div>
                     )}
-
-
                   </div>
-                  <h4 className="text-black text-xl font-semibold  mb-2">
+                  <h4 className="text-black text-xl font-semibold mb-2">
                     {person.name}
                   </h4>
                   <p className="text-[#D4AF37] font-medium font-modern mb-3 text-sm">
