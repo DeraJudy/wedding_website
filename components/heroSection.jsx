@@ -3,7 +3,10 @@
 import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import { Heart, Calendar, MapPin, ChevronDown } from "lucide-react";
-import heroImage from "@/assets/hero-wedding.jpg";
+
+const HERO_IMAGE_URL =
+  "https://res.cloudinary.com/diae7jcps/image/upload/f_auto,q_auto,w_2000/hero-wedding_trhtf0.jpg";
+
 
 const WEDDING_DATE_ISO = "2025-12-27T10:00:00+01:00"; // Dec 27, 2025 – 10:00
 
@@ -75,13 +78,14 @@ const HeroSection = () => {
         {/* Image */}
         <div className="relative w-full h-full">
           <Image
-            src={heroImage}
+            src={HERO_IMAGE_URL}
             alt="Beautiful couple portrait"
             priority
             fill
             sizes="100vw"
-            style={{ objectFit: "cover" }}
+            className="object-cover"
           />
+
         </div>
 
         {/* Sky blue overlay ON TOP of image */}

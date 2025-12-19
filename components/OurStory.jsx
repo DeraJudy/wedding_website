@@ -4,14 +4,6 @@ import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import { Heart, Calendar, Sparkles, Diamond, Camera } from "lucide-react";
 
-import dateImg1 from "@/assets/date1.jpeg";
-import dateImg2 from "@/assets/date2.jpeg";
-import dateImg3 from "@/assets/date3.jpeg";
-import dateImg4 from "@/assets/date4.jpeg";
-import dateImg5 from "@/assets/date5.jpeg";
-import dateImg6 from "@/assets/date6.jpeg";
-import dateImg16 from "@/assets/date16.jpg";
-
 const OurStory = () => {
   const [visibleItems, setVisibleItems] = useState(new Set());
   const sectionRef = useRef(null);

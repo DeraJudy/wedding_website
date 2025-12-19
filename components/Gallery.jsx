@@ -3,22 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { X, ChevronLeft, ChevronRight, Heart, Camera } from "lucide-react";
-
-import dateImg1 from "@/assets/date1.jpeg";
-import dateImg2 from "@/assets/date2.jpeg";
-import dateImg3 from "@/assets/date3.jpeg";
-import dateImg4 from "@/assets/date4.jpeg";
-import dateImg5 from "@/assets/date5.jpeg";
-import dateImg6 from "@/assets/date6.jpeg";
-import dateImg7 from "@/assets/date7.jpeg";
-import dateImg8 from "@/assets/date8.jpeg";
-import dateImg9 from "@/assets/date9.jpeg";
-import dateImg10 from "@/assets/date10.jpeg";
-import dateImg11 from "@/assets/date11.jpg";
-import dateImg12 from "@/assets/date12.jpg";
 import dateImg13 from "@/assets/date13.jpg";
-import dateImg14 from "@/assets/date14.jpg";
-import dateImg15 from "@/assets/date15.jpg";
 import dateImg16 from "@/assets/date15.jpg";
 
 

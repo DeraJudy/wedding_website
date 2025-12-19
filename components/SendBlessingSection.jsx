@@ -18,7 +18,6 @@ const SendBlessingSection = () => {
         </div>
 
         {/* Bank Account Details (Double) */}
-        {/* Bank Account Details (Double) */}
         <div
           className="grid md:grid-cols-2 gap-6 mb-10 animate-fade-in"
           style={{ animationDelay: "0.2s" }}

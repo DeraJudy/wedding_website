@@ -67,18 +67,18 @@ const BridalParty = () => {
     {
       name: "Matthew Ekeanyanwu",
       role: "Best Man",
-      description: "Fondly known as Father Ebuka, Matthew is one of the people Goziem leans on in hard times. Disciplined, faith-driven, and deeply resilient, he lives his gospel daily, you don’t need a motivational speaker when you have Matthew by your side. With him around, giving up simply isn’t an option 😄.",
+      description: "A.k.a Father Ebuka. Matthew is Goziem’s go-to in hard times, disciplined, faith-driven, and impossible to discourage. With him around, giving up is not on the table… we die here 😄.",
       image: "https://res.cloudinary.com/diae7jcps/image/upload/v1766076739/Ebuka_qagz6t.jpg"
       // image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
     },
     {
       name: "Valentine Eze",
       role: "Groomsman",
-      description: "Valentine is a senior software engineer whose passion for building meaningful products mirrors Goziem’s own love for solving real-world problems. United by faith and purpose, their conversations often move seamlessly between tech, values, and service, the kind of friendship built on substance and vision.",
+      description: "A senior software engineer who loves building solutions as much as Goziem does, except Valentine also obsesses about his Catholic faith just as deeply. Tech, purpose, and values keep this friendship solid.",
       image: "https://res.cloudinary.com/diae7jcps/image/upload/v1766105928/Valentine_mv4hxb.jpg"
     },
     {
-      name: "Michael",
+      name: "Michael Iwu",
       role: "Groomsman",
       description: "Michael is Goziem’s athletic cousin, steadily chasing his dreams one game at a time. His determination, discipline, and never-quit mindset are qualities Goziem deeply respects and draws inspiration from.",
       image: "https://res.cloudinary.com/diae7jcps/image/upload/v1766105987/MIcheal_zbjmck.jpg"
@@ -86,7 +86,7 @@ const BridalParty = () => {
     {
       name: "Elijah Eze",
       role: "Groomsman",
-      description: "Elijah brings a perfect mix of brilliance and joy into Goziem’s circle. A talented software engineer, instructor, and musical guru, he’s also the life of the party, reminding Goziem that while excellence matters, laughter and good company matter just as much.",
+      description: "A software engineer, instructor, musical guru, and the undisputed life of the party. Elijah keeps Goziem grounded, laughing, and occasionally dancing when he should be serious 😄.",
       image: "https://res.cloudinary.com/diae7jcps/image/upload/v1766105941/Elijah_vojpwy.jpg"
     }
   ];

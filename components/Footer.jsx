@@ -13,7 +13,11 @@ const Footer = () => {
         </div>
         
         <div className="flex justify-center gap-6 mb-8">
-          <a href="https://instagram.com/deragozie_wedding" className="text-muted-foreground hover:text-primary transition-colors">
+          <a 
+            href="https://www.instagram.com/chigoziem.ai/" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted-foreground hover:text-primary transition-colors">
             <Instagram className="h-5 w-5" />
           </a>
           <a href="mailto:alienjudy25@pematrix.com" className="text-muted-foreground hover:text-primary transition-colors">
@@ -22,7 +26,7 @@ const Footer = () => {
         </div>
         
         <p className="text-muted-foreground text-sm font-modern">
-          © 2025 Pematrix . Made with <Heart className="inline h-3 w-3 text-[gold]" fill="currentColor" /> for our special day.
+          © 2025 <span className='text-[royalblue] font-semibold '>Pematrix Technologies</span>. Made with <Heart className="inline h-3 w-3 text-[gold]" fill="currentColor" /> for our special day.
         </p>
       </div>
     </footer>
