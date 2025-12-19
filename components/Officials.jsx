@@ -29,13 +29,13 @@ const Officials = () => {
   const officials = [
     {
       name: "Rev. Fr. Dr. Wilfred Nwachukwu",
-      office: "Parish Priest",
+      office: "Officiating Priest",
       image: "https://res.cloudinary.com/dw7khzaml/image/upload/v1766183415/Screenshot_from_2025-12-19_23-29-19_mzmfpr.png"
     },
     {
       name: "Rev. Fr. Philip Oguariri",
-      office: "Associate Parish Priest",
-      image: null
+      office: "Officiating Priest",
+      image: "https://res.cloudinary.com/dw7khzaml/image/upload/v1766185937/Screenshot_from_2025-12-20_00-11-58_bxl6xl.png"
     },
     {
       name: "Mr & Mrs Iwu",
