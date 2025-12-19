@@ -14,6 +14,25 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Dera & Gozie 💍",
   description: "Two hearts, one journey. Welcome to our love story.",
+  openGraph: {
+    title: "Dera & Gozie Wedding 💍",
+    description: "Join us as we celebrate our love story and begin our journey together as one.",
+    type: "website",
+    images: [
+      {
+        url: "https://res.cloudinary.com/dw7khzaml/image/upload/v1766186481/Screenshot_from_2025-12-20_00-19-10_xrq1hu.png",
+        width: 1200,
+        height: 630,
+        alt: "Dera & Gozie Wedding"
+      }
+    ]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Dera & Gozie Wedding 💍",
+    description: "Join us as we celebrate our love story and begin our journey together as one.",
+    images: ["https://res.cloudinary.com/dw7khzaml/image/upload/v1766186481/Screenshot_from_2025-12-20_00-19-10_xrq1hu.png"]
+  }
 };
 
 export default function RootLayout({ children }) {
