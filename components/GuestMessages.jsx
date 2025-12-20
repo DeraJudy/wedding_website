@@ -146,22 +146,22 @@ const GuestMessages = () => {
         </div>
 
         {/* Messages Slider */}
-        <div className="relative h-32 overflow-hidden">
+        <div className="relative min-h-32 overflow-hidden">
           {loading ? (
             <p className="text-center text-gray-400">Loading messages…</p>
           ) : messages.length === 0 ? (
             <p className="text-center text-gray-400">No messages yet 💌</p>
           ) : (
             <>
-              <div className="relative w-full h-full">
+              <div className="relative w-full">
                 {messages.map((msg, index) => (
                   <div
                     key={msg._id}
-                    className={`absolute inset-0 transition-opacity duration-1000 ${
+                    className={`absolute inset-x-0 transition-opacity duration-1000 ${
                       index === currentIndex ? 'opacity-100' : 'opacity-0'
                     }`}
                   >
-                    <div className="bg-white shadow rounded p-6 flex gap-4 h-full border-t-4 border-[#9CAF88]">
+                    <div className="bg-white shadow rounded p-6 flex gap-4 border-t-4 border-[#9CAF88]">
                       <div className="w-10 h-10 rounded-full bg-[#F3F7F2] flex items-center justify-center flex-shrink-0">
                         <User className="h-5 w-5 text-[#9CAF88]" />
                       </div>
