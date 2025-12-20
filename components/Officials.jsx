@@ -48,7 +48,7 @@ const Officials = () => {
       image: "https://res.cloudinary.com/dw7khzaml/image/upload/v1766182049/Screenshot_from_2025-12-19_22-44-04_psiiv6.png"
     },
     {
-      name: "Sarah Williams",
+      name: "Udochi Nwam",
       office: "Chief Bridesmaid",
       image: "https://res.cloudinary.com/diae7jcps/image/upload/v1766076736/Udochi_keb8id.jpg"
     },
