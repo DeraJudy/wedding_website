@@ -34,6 +34,7 @@ const Navigation = () => {
                 <a
                   key={item.label}
                   href={item.href}
+                  onClick={() => setIsOpen(false)}
                   className="text-black hover:text-[skyblue] transition-colors duration-300 
                   text-sm font-medium font-modern relative after:absolute after:bottom-0 
                   after:left-0 after:w-0 after:h-0.5 after:bg-[gold] after:transition-all 
@@ -58,23 +59,29 @@ const Navigation = () => {
       </div>
 
       {/* Mobile Navigation */}
-      {isOpen && (
-        <div className="lg:hidden animate-fade-in">
-          <div className="px-4 pt-2 pb-4 space-y-1 bg-white/90 backdrop-blur-md">
-            {navItems.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                onClick={() => setIsOpen(false)}
-                className="block px-3 py-3 text-black hover:text-[skyblue] hover:bg-secondary/50 rounded-lg transition-all duration-200 text-base font-medium font-modern"
-              >
-                {item.label}
-              </a>
-              // <a href={ll} className="">Login</a>
-            ))}
-          </div>
+      <div className={`lg:hidden fixed inset-0 top-0 z-40 transition-all duration-300 ease-in-out ${
+        isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+      }`}>
+        <div className="absolute inset-0 bg-black/50" onClick={() => setIsOpen(false)} />
+        <div className={`absolute left-0 top-0 h-screen w-1/2 bg-white shadow-lg transform transition-transform duration-300 ease-out ${
+          isOpen ? 'translate-x-0' : '-translate-x-full'
+        }`}>
+            <div className="p-6">
+              <div className="space-y-4">
+                {navItems.map((item) => (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    onClick={() => setIsOpen(false)}
+                    className="block py-3 text-gray-800 hover:text-[#4682B4] text-lg font-medium"
+                  >
+                    {item.label}
+                  </a>
+                ))}
+              </div>
+            </div>
         </div>
-      )}
+      </div>
     </nav>
   );
 };

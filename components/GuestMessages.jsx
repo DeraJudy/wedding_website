@@ -1,13 +1,12 @@
 "use client";
 import { useState, useEffect } from "react";
-import { MessageCircle, Send, User, X, CheckCircle, ChevronLeft, ChevronRight } from "lucide-react";
+import { MessageCircle, Send, User, X, CheckCircle } from "lucide-react";
 
 const GuestMessages = () => {
   const [messages, setMessages] = useState([]);
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(true);
-  const [currentIndex, setCurrentIndex] = useState(0);
   const [showModal, setShowModal] = useState(false);
   const [modalContent, setModalContent] = useState({ title: "", description: "", isSuccess: true });
 
@@ -32,24 +31,6 @@ const GuestMessages = () => {
   useEffect(() => {
     fetchMessages();
   }, []);
-
-  // Auto-rotate messages
-  useEffect(() => {
-    if (messages.length > 1) {
-      const interval = setInterval(() => {
-        setCurrentIndex((prev) => (prev + 1) % messages.length);
-      }, 10000); // Change every 10 seconds
-      return () => clearInterval(interval);
-    }
-  }, [messages.length]);
-
-  const nextMessage = () => {
-    setCurrentIndex((prev) => (prev + 1) % messages.length);
-  };
-
-  const prevMessage = () => {
-    setCurrentIndex((prev) => (prev - 1 + messages.length) % messages.length);
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -145,62 +126,33 @@ const GuestMessages = () => {
           </form>
         </div>
 
-        {/* Messages Slider */}
-        <div className="relative min-h-32 overflow-hidden">
+        {/* Messages List */}
+        <div className="max-h-96 overflow-y-auto space-y-4 pr-2 scrollbar-thin scrollbar-thumb-[#9CAF88] scrollbar-track-gray-100">
           {loading ? (
             <p className="text-center text-gray-400">Loading messages…</p>
           ) : messages.length === 0 ? (
             <p className="text-center text-gray-400">No messages yet 💌</p>
           ) : (
-            <>
-              <div className="relative w-full">
-                {messages.map((msg, index) => (
-                  <div
-                    key={msg._id}
-                    className={`absolute inset-x-0 transition-opacity duration-1000 ${
-                      index === currentIndex ? 'opacity-100' : 'opacity-0'
-                    }`}
-                  >
-                    <div className="bg-white shadow rounded p-6 flex gap-4 border-t-4 border-[#9CAF88]">
-                      <div className="w-10 h-10 rounded-full bg-[#F3F7F2] flex items-center justify-center flex-shrink-0">
-                        <User className="h-5 w-5 text-[#9CAF88]" />
-                      </div>
-                      <div className="flex-1">
-                        <div className="flex justify-between mb-1">
-                          <h4 className="font-semibold text-black">
-                            {msg.name}
-                          </h4>
-                          <span className="text-sm text-gray-500">
-                            {new Date(msg.createdAt).toLocaleDateString()}
-                          </span>
-                        </div>
-                        <p className="text-gray-700 leading-relaxed">
-                          {msg.message}
-                        </p>
-                      </div>
-                    </div>
+            messages.map((msg) => (
+              <div key={msg._id} className="bg-white shadow rounded p-6 flex gap-4 border-t-4 border-[#9CAF88]">
+                <div className="w-10 h-10 rounded-full bg-[#F3F7F2] flex items-center justify-center flex-shrink-0">
+                  <User className="h-5 w-5 text-[#9CAF88]" />
+                </div>
+                <div className="flex-1">
+                  <div className="flex justify-between mb-1">
+                    <h4 className="font-semibold text-black">
+                      {msg.name}
+                    </h4>
+                    <span className="text-sm text-gray-500">
+                      {new Date(msg.createdAt).toLocaleDateString()}
+                    </span>
                   </div>
-                ))}
+                  <p className="text-gray-700 leading-relaxed">
+                    {msg.message}
+                  </p>
+                </div>
               </div>
-              
-              {/* Navigation Arrows */}
-              {messages.length > 1 && (
-                <>
-                  <button
-                    onClick={prevMessage}
-                    className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white shadow-md rounded-full p-2 hover:bg-gray-50 transition"
-                  >
-                    <ChevronLeft className="h-5 w-5 text-gray-600" />
-                  </button>
-                  <button
-                    onClick={nextMessage}
-                    className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white shadow-md rounded-full p-2 hover:bg-gray-50 transition"
-                  >
-                    <ChevronRight className="h-5 w-5 text-gray-600" />
-                  </button>
-                </>
-              )}
-            </>
+            ))
           )}
         </div>
 

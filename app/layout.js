@@ -14,6 +14,9 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Dera & Gozie 💍",
   description: "Two hearts, one journey. Welcome to our love story.",
+  icons: {
+    icon: '/favicon.png',
+  },
   openGraph: {
     title: "Dera & Gozie Wedding 💍",
     description: "Join us as we celebrate our love story and begin our journey together as one.",
@@ -40,6 +43,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        suppressHydrationWarning={true}
       >
         {children}
       </body>
